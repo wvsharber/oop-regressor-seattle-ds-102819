@@ -15,7 +15,9 @@ Your task today is to create a new class, `MeanRegressor`, which implements a si
     - This method returns the mean of the training data for each row of `X`, i.e. a list containing the same number repeated as many times as necessary.
 4. Write a method `MeanRegressor#score(X, y)`:
     - `X` is a two-dimensional matrix and `y` is a list of target variables
-    - This method will ignore the inputs, and instead return 0.0 each time, which is the R^2 value for guessing the mean
+    - This method will compute the R<sup>2</sup> for how well the features of `X` are able to predict the target of `y`.  As a reminder, R<sup>2</sup> is calculated as 1 - `residual sum of squares`/`total sum of squares`, where `residual sum of squares` is the sum of all ((y_true - y_pred)<sup>2</sup>) and `total sum of squares` is the sum of all ((y_true - y_pred.mean())<sup>2</sup>).  So, if you are scoring with the same `y` that was used for the `fit`, you should expect the score to be exactly zero.
+
+These requirements have test coverage.  To run the tests, run `pytest` in bash from the root of this repository.  There should be an initial print-out saying that you failed all 5 tests.  Re-run `pytest` as you implement the requirements, and eventually they should all pass.
 
 ## Hints
 
